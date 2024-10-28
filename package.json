@@ -1,0 +1,25 @@
+{
+  "name": "football-scoreboard-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "build": "pnpm --filter ./football-scoreboard-library build && pnpm --filter ./football-scoreboard-ui build",
+    "dev": "pnpm run setup && pnpm --filter football-scoreboard-ui dev",
+    "setup": "cd football-scoreboard-library && pnpm install && pnpm run build && cd .. && pnpm install",
+    "lint": "eslint . --ext .ts",
+    "cleanup": "rimraf ./football-scoreboard-library/dist ./football-scoreboard-ui/dist && rimraf ./football-scoreboard-library/node_modules ./football-scoreboard-ui/node_modules"
+  },
+  "devDependencies": {
+    "eslint": "^9.13.0",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.3"
+  },
+  "engines": {
+    "node": "^20.11.1"
+  },
+  "packageManager": "pnpm@8.15.3"
+}
