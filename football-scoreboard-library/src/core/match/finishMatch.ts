@@ -18,5 +18,3 @@ export function finishMatch(matches: Match[], matchId: string): Match[] {
     match.id === matchId ? { ...match, isFinished: true } : match
   );
 }
-
-

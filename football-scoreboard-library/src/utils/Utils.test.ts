@@ -57,7 +57,7 @@ describe('Utils', () => {
       const matches = [match1, match2];
       const sortedMatches = sortMatches(matches);
 
-      expect(sortedMatches[0].homeTeam).toBe('Team C'); 
+      expect(sortedMatches[0].homeTeam).toBe('Team C');
       expect(sortedMatches[1].homeTeam).toBe('Team A');
     });
   });

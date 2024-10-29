@@ -1,19 +1,21 @@
-// Scoreboard.test.tsx
 import { render, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import Scoreboard from './Scoreboard.component';
+import { MatchProps } from '../match/Match.model';
 
 describe('Scoreboard Component', () => {
   const mockOnUpdateScore = vi.fn();
   const mockOnFinishMatch = vi.fn();
 
-  const defaultMatches = [
+  const defaultMatches: MatchProps[] = [
     {
       id: '1',
       homeTeam: 'Team A',
       awayTeam: 'Team B',
       homeScore: 0,
       awayScore: 0,
+      startTime: new Date('2024-10-01T10:00:00'),
+      isFinished: false,
       onUpdateScore: mockOnUpdateScore,
       onFinishMatch: mockOnFinishMatch,
     },
@@ -23,6 +25,8 @@ describe('Scoreboard Component', () => {
       awayTeam: 'Team D',
       homeScore: 1,
       awayScore: 2,
+      startTime: new Date('2024-10-01T10:00:00'),
+      isFinished: false,
       onUpdateScore: mockOnUpdateScore,
       onFinishMatch: mockOnFinishMatch,
     },

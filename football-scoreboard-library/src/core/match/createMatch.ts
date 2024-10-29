@@ -15,6 +15,6 @@ export function createMatch(homeTeam: string, awayTeam: string): Match {
     homeScore: 0,
     awayScore: 0,
     startTime: new Date(),
-    isFinished: false
+    isFinished: false,
   };
 }
